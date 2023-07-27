@@ -1,0 +1,102 @@
+#projectPage{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+}
+
+.projectCardContainer{
+    display: flex;
+    justify-content: center;
+}
+.Hcontainer {
+    display: flex;
+    width: 60%;
+}
+.Vcontainer {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    
+}
+.projectCard {
+    width: 50%;
+    min-width: 700px;
+    padding: 2vh 5vw;
+    margin: 1vh;
+    background: 
+        linear-gradient( 90deg, black,hsla(240, 26%, 24%, 0.849) 10% 90%, black),
+        linear-gradient(var(--trinary-color), var(--main-light-color) 7% 93%, var(--trinary-color));
+}
+
+.projectDetails{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    flex: 1;
+}
+
+.projectCardTitle {
+    font-size: 2vh;
+    margin: 1vh;
+}
+.projectDetails > h2, h3, h4, p {
+    margin: 5px;
+}
+
+.projectDetails > p {
+    margin-left: 20px;
+    margin-right: 100px;
+    font-family: Gotu;
+    text-align: justify;
+}
+
+.projectCardImgContainer {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    height: 33vh;
+    min-height: 400px;
+}
+
+#projectImage, #backgroundImg{
+    border-radius: 10px;
+    height: 33vh;
+    min-height: 400px;
+
+    width: auto;
+    position: absolute;
+    object-fit: contain;
+}
+#backgroundImg {
+    box-shadow: 0px 0px 1vw var(--trinary-color);
+}
+ 
+
+.fade{
+    animation-name: fadeAnimation;
+    animation-duration: 3s;
+    animation-timing-function: ease-in;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+    z-index: 3;
+}
+
+@keyframes fadeAnimation {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    95% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        z-index: 0;
+    }
+}
+
+
+

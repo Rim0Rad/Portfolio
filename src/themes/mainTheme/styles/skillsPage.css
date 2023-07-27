@@ -1,0 +1,61 @@
+
+
+.skillSection {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    width: 60%;
+    max-width: 60%;
+    height: 10%;
+    max-height: 5%;
+    overflow:hidden;
+}
+.skillSection > h3 {
+    font-size: 30px;
+}
+
+.skillContent {
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+    padding-left: 2vw;
+    border-radius: 20px;
+    background: 
+    linear-gradient( 90deg, black, var(--main-light-color) 10% 90%, black),
+    linear-gradient(black, var(--main-light-color)7% 93%, var(--end-bt-bg-color))
+    ;
+}
+
+.techLogoContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    animation: moveInFromLeft 1s ease;
+    min-width: 6vw;
+}
+.techLogo {
+    width: auto;
+    height: 6vh;
+    margin: 5px;
+    aspect-ratio: 1;
+}
+
+.techLogoContainer > p{
+    font-size: 20px;
+}
+
+@keyframes moveInFromLeft {
+    0% {
+        /* opacity: 0; */
+        margin-left: 100vh;
+    }
+    /* 20% {
+        opacity: 0;
+    } */
+    
+    100% {
+        /* opacity: 1; */
+    }
+}

@@ -1,0 +1,238 @@
+:root{
+    --bubble-size: 24vh;
+}
+
+.bubbleContainer {
+    position: absolute;
+    display: flex;
+    top: 50%;
+    left: 20%;
+    transform: translate(-20%, -50%);
+    height: var(--bubble-size);
+    width: auto;
+    aspect-ratio: 1;
+    z-index: 10;
+    align-items: center;
+    justify-content: center;
+}
+
+.contactBubble {
+    transition: all 0.4s ease;
+    height: calc(var(--bubble-size) - 4vh);
+    width: auto;
+    aspect-ratio: 1;
+    background-color: rgb(28, 11, 121);
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#githubLogoBackground{
+    transition: all 0.4s ease;
+    height: calc(var(--bubble-size) - 8vh);
+    width: auto;
+    aspect-ratio: 1;
+    border-radius: 100%;
+    background-color: rgba(255, 255, 255, 0.801);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    transition: all 0.4s ease;
+    height: calc(var(--bubble-size) - 10vh);
+    width: auto;
+    aspect-ratio: 1;
+}
+
+.contactBubble:hover {
+    transition: all 0.4s ease;
+    height: calc( var(--bubble-size) - 2vh);
+    .logo {
+        transition: all 0.4s ease;
+        height: 16vh;
+        height: calc( var(--bubble-size) - 8vh);
+    }
+    #githubLogoBackground{
+        transition: all 0.4s ease;
+        height: 18vh;
+        height: calc( var(--bubble-size) - 6vh);
+    }
+}
+
+#linkedInCheckBox, #githubCheckBox, #emailCheckBox {
+    display: none;
+}
+
+
+#githubCheckBox:checked + label > #githubBubble,  
+#linkedInCheckBox:checked + label > #linkedInBubble,
+#emailCheckBox:checked + label > #emailBubble {
+    transition: all 2s ease;
+    background: radial-gradient(rgb(182, 122, 228), rgb(122, 35, 194), rgba(0, 0, 0, 0.671), rgba(0, 0, 0, 0));
+    border-radius: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 50vh;
+    z-index: 11;
+}
+
+
+#linkedInBubble{
+    top: 50%;
+    left: 20%;
+    transform: translate(-20%, -50%);
+}
+.linkedInBubbleAnimation {
+    animation: moveLinkedInBubble 1s ease;
+    
+}
+#githubBubble{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.githubBubbleAnimation {
+    animation: moveGithubBubble 1s ease-in-out;
+    animation-direction:reverse;
+}
+#emailBubble {
+    top: 50%;
+    left: 80%;
+    transform: translate(-80%, -50%);
+}
+.emailBubbleAnimation  {
+   
+    animation: moveEmailBubble 1s ease-in-out;
+    animation-direction:reverse;
+}
+
+@keyframes moveLinkedInBubble {
+    0% {}
+    100% {
+        top: 50%;
+        left: 20%;
+        transform: translate(-20%, -50%);
+    }
+}
+@keyframes moveGithubBubble {
+    0% {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    100% {
+        top: 50%;
+        left: 20%;
+        transform: translate(-20%, -50%);
+    }
+}
+@keyframes moveEmailBubble {
+    0% {
+        top: 50%;
+        left: 80%;
+        transform: translate(-80%, -50%);
+    }
+    100% {
+        
+        top: 50%;
+        left: 20%;
+        transform: translate(-20%, -50%);
+        --init-animation: 0;
+    }
+}
+@keyframes moveToMidleAndGrow {
+    0% {
+        
+    }
+    50% {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 150vh;
+        z-index: 11;
+    }
+    100% {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 150vh;
+        z-index: 11;
+    }
+   
+   
+}
+
+#emailForm, #emailSentMessage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 12;
+
+    width: 60%;
+    height: 40%;
+    background: linear-gradient( var(--start-bt-bg-color), rgb(0, 0, 0));
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: growContainer 1s ease;
+}
+input, textarea {
+    color: black;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    min-height: 2.5vh;
+    min-width: 10vw;
+    max-width: 50%;
+    animation: growContainer 1s ease;
+
+    
+}
+textarea {
+    padding: 10px;
+}
+label {
+    font-size: 20px;
+    animation: growText 1s ease;
+
+}
+#sendEmailBT{
+    position: relative;
+
+}
+
+#emailSentConfirmationText{
+    font-size: 40px;
+}
+@keyframes growContainer {
+    0%{
+        min-width: 0;
+        min-height: 0;
+        position: absolute;
+        height: calc(var(--bubble-size) - 4vh);
+        width: calc(var(--bubble-size) - 4vh);;
+        aspect-ratio: 1;
+        background-color: rgb(28, 11, 121);
+        border-radius: 100%;
+        padding: 20px;
+    }
+    100%{
+
+    }
+}
+@keyframes growText {
+    0% {
+        font-size: 0;
+    }
+    100%{
+        
+    }
+}

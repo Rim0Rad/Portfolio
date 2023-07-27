@@ -1,0 +1,52 @@
+#homepage {
+    
+}
+
+#container {
+    display: flex;
+    height: auto;
+    width: 15vw;
+    aspect-ratio: 1;
+    justify-content: center;
+    background: radial-gradient(rgba(91, 18, 226, 0.342), rgb(0, 0, 0));
+    border-radius: 100%;
+}
+
+#mainProfilePicContainer{
+    display: flex;
+    width: 13vw;
+    height: auto;
+    aspect-ratio: 1;
+    align-self: center;
+    overflow: hidden;
+    border-radius: 100%;
+    border: 5px solid black;
+    position:static;
+
+}
+#mainProfilePicContainer:hover{
+    animation: ringGlow .6s infinite ease-in-out alternate;
+    animation-fill-mode: forwards;
+}
+@keyframes ringGlow{
+   from {border: 1vh solid var(--secondary-color);}
+   to {border: 1.5vh solid var(--trinary-color);}
+}
+
+#mainProfilePic{
+    object-fit: cover;
+    height: auto;
+    width: 13vw;
+    aspect-ratio: 1;
+}
+
+#welcomeMessageTextContainer{
+   margin: 1vh; 
+   text-align: center;
+   font-size: 1vw;
+}
+
+#welcomeText {
+    font-size: 6vh;
+}
+

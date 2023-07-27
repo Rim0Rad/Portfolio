@@ -1,0 +1,9 @@
+
+@import './mainTheme/colorPalet.css';
+@import './mainTheme/styles/main.css';
+@import './mainTheme/styles/header.css';
+@import './mainTheme/styles/homePage.css';
+@import './mainTheme/styles/aboutPage.css';
+@import './mainTheme/styles/skillsPage.css';
+@import './mainTheme/styles/projectsPage.css';
+@import './mainTheme/styles/contactsPage.css';

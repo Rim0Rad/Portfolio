@@ -1,0 +1,9 @@
+:root {
+   
+    --start-bt-bg-color: rgb(17, 148, 56);
+    --midle-bt-bg-color:rgba(255,255,255, 1);
+    --end-bt-bg-color: rgba(167, 177, 29, 0.8);
+
+    --start-trsp-color: rgba(17, 148, 56, 0.7);
+    --end-trsp-color: rgba(167, 177, 29, 0.7);
+}

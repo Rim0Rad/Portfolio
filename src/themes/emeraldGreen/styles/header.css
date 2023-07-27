@@ -1,0 +1,68 @@
+
+
+
+
+nav {
+    width: 100vw;
+    height: 15vh;
+    max-height: 15vh;
+    min-height: 140px;
+    padding: 0px 0px;
+    background-color: rgba(0, 71, 4, 0.815);
+}
+
+button {
+    width: 20%;
+    height: 140px;
+    position: absolute;
+    margin: 1px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    
+}
+
+#projectsBT {
+    margin-left:  10%;
+    z-index: 1;
+    background: linear-gradient(90deg, var(--start-bt-bg-color), var(--midle-bt-bg-color), var(--end-bt-bg-color));
+    background-size: 400% 400%;
+    accent-color: red;
+}
+#skillsBT {
+    margin-left:  25%;
+    z-index: 2;
+    background: linear-gradient(90deg, var(--start-bt-bg-color),  var(--midle-bt-bg-color), var(--end-bt-bg-color));
+    background-size: 400% 400%;
+}
+#homeBT {
+    margin-left: 40%;
+    z-index: 3;
+    background: linear-gradient(90deg, var(--start-bt-bg-color),  var(--midle-bt-bg-color), var(--end-bt-bg-color));
+    background-size: 400% 100%;
+}
+#aboutBT {
+    margin-left:  55%;
+    z-index: 2;
+    background: linear-gradient( 90deg, var(--start-bt-bg-color),  var(--midle-bt-bg-color), var(--end-bt-bg-color)), url('../assets/profile-pic.jpg');
+    background-size: 400% 100%;
+}
+#contactBT {
+    margin-left: 70%;
+    z-index: 1;
+    background: linear-gradient(90deg, var(--start-bt-bg-color),  var(--midle-bt-bg-color), var(--end-bt-bg-color)) , url('../assets/image.png');
+
+    background-size: 400% 100%;
+    
+}
+
+#projectsBT:hover, #skillsBT:hover, #homeBT:hover, #aboutBT:hover, #contactBT:hover {
+    z-index: 4;
+    animation: lightstreak 1.0s ;
+    animation-fill-mode: forwards;
+}
+
+@keyframes lightstreak {
+    0% { background-position: 0% 50%; color: black; borderColor:var(--start-bt-bg-color); font-size: 16px;}
+    100% { background-position: 100% 50%; color: white; border-color: var(--end-bt-bg-color); font-size: 25px;}
+}
