@@ -1,11 +1,9 @@
-
-
 .skillSection {
     display: flex;
     flex-direction: column;
     margin: 10px;
     width: 60%;
-    max-width: 60%;
+    /* max-width: 80%; */
     height: 10%;
     max-height: 5%;
     overflow:hidden;
@@ -36,14 +34,14 @@
     min-width: 6vw;
 }
 .techLogo {
-    width: auto;
-    height: 6vh;
+    width: 5vw;
+    height: auto;
     margin: 5px;
     aspect-ratio: 1;
 }
 
 .techLogoContainer > p{
-    font-size: 20px;
+    font-size: 1.4vw;
 }
 
 @keyframes moveInFromLeft {

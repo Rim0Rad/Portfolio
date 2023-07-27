@@ -21,7 +21,7 @@
 }
 .projectCard {
     width: 50%;
-    min-width: 700px;
+    /* min-width: 700px; */
     padding: 2vh 5vw;
     margin: 1vh;
     background: 

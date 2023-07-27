@@ -1,10 +1,10 @@
 :root{
-    --bubble-size: 24vh;
+    --bubble-size: calc(15vh);
 }
 
 .bubbleContainer {
-    position: absolute;
     display: flex;
+    position: absolute;
     top: 50%;
     left: 20%;
     transform: translate(-20%, -50%);

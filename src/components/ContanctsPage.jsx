@@ -9,6 +9,8 @@ import EmailForm from './EmailForm'
 
 
 let emailCheckbox;
+let linkedInCheckBox;
+let githubCheckBox;
 
 export default function ContacsPage () {
 
@@ -16,17 +18,22 @@ export default function ContacsPage () {
     const [ emailSent, setEmailSent ] = useState(false)
         
     function hanldePageLoad () {
-        console.log("page Loaded")
         emailCheckbox = document.getElementById("emailCheckBox")
+        linkedInCheckBox = document.getElementById("linkedInCheckBox")
+        githubCheckBox = document.getElementById("githubCheckBox")
     }
 
     function pageClikcListener ( e ) {
-        const rect = document.getElementById("emailForm").getBoundingClientRect()
-        if(e.clientY < rect.top || e.clientY > rect.bottom || e.clientX < rect.left || e.clientX > rect.right){
-            window.removeEventListener("click", pageClikcListener)
-            
-            setIsEmailForm(false)
-        }        
+        console.log("click")
+        const emailForm = document.getElementById("emailForm")
+        if(emailForm){
+            const rect = emailForm.getBoundingClientRect()
+            if(e.clientY < rect.top || e.clientY > rect.bottom || e.clientX < rect.left || e.clientX > rect.right){
+                window.removeEventListener("click", pageClikcListener)
+                setIsEmailForm(false)
+            }  
+        }
+              
     }
 
     /* Handle transition to different pages and opening of email form */ 
@@ -39,10 +46,12 @@ export default function ContacsPage () {
         setTimeout(() => {
             if(e.target.id === "linkedInCheckBox"){
                 document.querySelector('#linkedInBubble').classList.remove('linkedInBubbleAnimation')
-                window.location.href = "https://www.linkedin.com/in/rimas-radziunas/"
+                linkedInCheckBox.checked = false
+                window.open("https://www.linkedin.com/in/rimas-radziunas/")
             }else if (e.target.id === "githubCheckBox"){
                 document.querySelector('#githubBubble').classList.remove('githubBubbleAnimation')
-                window.location.href = "https://github.com/Rim0Rad"
+                githubCheckBox.checked = false
+                window.open("https://github.com/Rim0Rad")
             }
             else if (e.target.id === "emailCheckBox"){
                 document.querySelector('#emailBubble').classList.remove('emailBubbleAnimation')
@@ -60,10 +69,11 @@ export default function ContacsPage () {
     
     return (
         <section id="contacsPage" onLoad={hanldePageLoad} onReset={hanldePageLoad} >
-                <section className="pageTitleContainer"> 
-                    <p className="pageTitle">Contacts</p>
-                </section>
+            <section className="pageTitleContainer"> 
+                <p className="pageTitle">Contacts</p>
+            </section>
             <section className="pageContent">
+
                 <input type="checkbox" id="linkedInCheckBox" className="glow" onClick={handleChange}></input>
                 <label htmlFor="linkedInCheckBox">
                     <section  id="linkedInBubble" className="bubbleContainer linkedInBubbleAnimation">
@@ -90,14 +100,13 @@ export default function ContacsPage () {
                         </section>
                     </section>
                 </label>
-
-
                 {isEmailForm && <EmailForm/>}
                 { emailSent && 
                     <section id="emailSentMessage">
                         <p id="emailSentConfirmationText">Email Sent</p>
                     </section>
                 }
+
             </section>
         </section>
     )

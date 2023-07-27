@@ -22,7 +22,7 @@ export default function SkillPage () {
             <section className="pageContent">
 
                 <section className="skillSection">
-                    <h3>Programming Languages</h3>
+                    <h3 className='skillTitle'>Programming Languages</h3>
                     <section className="skillContent">
                         <div className="techLogoContainer">
                             <img className='techLogo' src={JSlogo}/>
@@ -43,7 +43,7 @@ export default function SkillPage () {
                     </section>
                 </section>
                 <section className="skillSection">
-                    <h3>Front-End</h3>
+                    <h3 className='skillTitle'>Front-End</h3>
                     <section className="skillContent">
                         <div className="techLogoContainer">
                             <img className='techLogo' src={HTMLlogo}/>
@@ -68,7 +68,7 @@ export default function SkillPage () {
                     </section>
                 </section>
                 <section className="skillSection">
-                    <h3>Back-End</h3>
+                    <h3 className='skillTitle'>Back-End</h3>
                     <section className="skillContent">
                         <div className="techLogoContainer">
                             <img className='techLogo' src={SQLlogo}/>
