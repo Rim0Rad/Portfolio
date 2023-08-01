@@ -24,14 +24,12 @@ export default function Header(){
 
     return (
         <section id="nav">
-            <section id="navButtonContainer">
-                {/* <button id="themebt" onClick={handleClick}>{theme}</button> */}
-                <NavButton id="projectsBT" title={'Projects'} path='projects'/>
-                <NavButton id="skillsBT" title={'Skills'} path='skills'/>
-                <NavButton id="homeBT" title={'Home'} path='home'/>
-                <NavButton id="aboutBT" title={'About Me'} path='aboutme'/>
-                <NavButton id="contactBT" title={'Contact Me'} path='contacts'/>
-            </section>
+            {/* <button id="themebt" onClick={handleClick}>{theme}</button> */}
+            <NavButton id="projectsBT" title={'Projects'} path='projects'/>
+            <NavButton id="skillsBT" title={'Skills'} path='skills'/>
+            <NavButton id="homeBT" title={'Home'} path='home'/>
+            <NavButton id="aboutBT" title={'About'} path='aboutme'/>
+            <NavButton id="contactBT" title={'Contacts'} path='contacts'/>
         </section>
     )
 }

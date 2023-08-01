@@ -15,7 +15,6 @@ let githubCheckBox;
 export default function ContacsPage () {
 
     const [ isEmailForm, setIsEmailForm ] = useState(false)
-    const [ emailSent, setEmailSent ] = useState(false)
         
     function hanldePageLoad () {
         emailCheckbox = document.getElementById("emailCheckBox")
@@ -24,7 +23,6 @@ export default function ContacsPage () {
     }
 
     function pageClikcListener ( e ) {
-        console.log("click")
         const emailForm = document.getElementById("emailForm")
         if(emailForm){
             const rect = emailForm.getBoundingClientRect()
@@ -47,11 +45,11 @@ export default function ContacsPage () {
             if(e.target.id === "linkedInCheckBox"){
                 document.querySelector('#linkedInBubble').classList.remove('linkedInBubbleAnimation')
                 linkedInCheckBox.checked = false
-                window.open("https://www.linkedin.com/in/rimas-radziunas/")
+                // window.open("https://www.linkedin.com/in/rimas-radziunas/")
             }else if (e.target.id === "githubCheckBox"){
                 document.querySelector('#githubBubble').classList.remove('githubBubbleAnimation')
                 githubCheckBox.checked = false
-                window.open("https://github.com/Rim0Rad")
+                // window.open("https://github.com/Rim0Rad")
             }
             else if (e.target.id === "emailCheckBox"){
                 document.querySelector('#emailBubble').classList.remove('emailBubbleAnimation')
@@ -68,10 +66,12 @@ export default function ContacsPage () {
     
     
     return (
-        <section id="contacsPage" onLoad={hanldePageLoad} onReset={hanldePageLoad} >
+        <section className='page' onLoad={hanldePageLoad} onReset={hanldePageLoad} >
+            
             <section className="pageTitleContainer"> 
                 <p className="pageTitle">Contacts</p>
             </section>
+
             <section className="pageContent">
 
                 <input type="checkbox" id="linkedInCheckBox" className="glow" onClick={handleChange}></input>
@@ -86,9 +86,7 @@ export default function ContacsPage () {
                 <label htmlFor="githubCheckBox">
                     <section id="githubBubble" className="bubbleContainer githubBubbleAnimation">
                         <section className="contactBubble">
-                            <section id="githubLogoBackground">
-                                <img id="githubLogo" className='logo' src={githubLogo}/>
-                            </section>
+                            <img id="githubLogo" className='logo' src={githubLogo}/>
                         </section>
                     </section>
                 </label>
@@ -100,13 +98,7 @@ export default function ContacsPage () {
                         </section>
                     </section>
                 </label>
-                {isEmailForm && <EmailForm/>}
-                { emailSent && 
-                    <section id="emailSentMessage">
-                        <p id="emailSentConfirmationText">Email Sent</p>
-                    </section>
-                }
-
+                {isEmailForm && <EmailForm setIsEmailForm={setIsEmailForm}/>}
             </section>
         </section>
     )

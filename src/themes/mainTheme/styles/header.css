@@ -1,29 +1,64 @@
-#navButtonContainer {
-    width: 100vw;
-    height: 7vh;
-    background-color: rgb(0, 0, 0);
-    display: flex;
-    flex-direction: column;
 
+
+#nav {
+    transition: all 0.5s ease;
+    display: flex;
+    background-color: rgb(0, 0, 0);
     z-index: 1;
+    height: 7vh;
+    min-height: 80px;
+    align-items: center;
+    justify-content: center;
 }
 
+.button {
+    transition: all 0.5s ease;
 
-
-button {
-    position: absolute;
-    width: 20%;
+    border: none;
+    min-width: 140px;
     height: 5vh;
-    margin: 1vh;
-    border-radius: 10px;
-    font-size: 1.5vh;
+    min-height: 50px;
+    border-radius: 4px;
+    font-size: var(--fontSizeNormal);
     font-weight: bold;
     background: linear-gradient(90deg, var(--start-bt-bg-color), var(--midle-bt-bg-color), var(--end-bt-bg-color));
     background-size: 400% 400%;
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
+    text-shadow: 0 1px 2px black;
+    user-select: none;
+    box-shadow: 0 0 15px var(--start-bt-bg-color);
 }
+
+
+@media screen and (max-width: 900px) {
+    .button {
+        transition: all 0.5s ease;
+        font-size: 15px;
+        min-width: 100px;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .button {
+        transition: all 0.5s ease;
+        font-size: 11px;
+        min-width: 70px;
+        --fontSizeLarge: 12px;
+    }
+}
+.button:hover {
+    animation: lightstreak 0.8s forwards;
+}
+
+@keyframes lightstreak {
+    0% { background-position: 0% 50%; color: black; borderColor:var(--start-bt-bg-color); }
+    100% { background-position: 100% 50%; color: white; border-color: var(--end-bt-bg-color); font-size: var(--fontSizeLarge);}
+}
+@keyframes reverselightstreak {
+    0% { background-position: 100% 50%; color: white; border-color: var(--end-bt-bg-color); font-size: var(--fontSizeLarge);}
+    100% { background-position: 0% 50%; color: black; borderColor:var(--start-bt-bg-color); }
+}
+
+
 
 #themebt {
     background-color: rgb(53, 12, 43);
@@ -31,74 +66,4 @@ button {
     border-radius: 200px;
     width: 200px;
     margin: 1vh;
-}
-
-#projectsBT {
-    margin-left:  10%;
-    z-index: 2;
-    
-    
-}
-#skillsBT {
-    margin-left:  25%;
-    z-index: 3;
-    background: linear-gradient(90deg, var(--start-bt-bg-color),  var(--midle-bt-bg-color), var(--end-bt-bg-color));
-    background-size: 400% 400%;
-}
-#homeBT {
-    margin-left: 40%;
-    z-index: 4;
-    background: linear-gradient(90deg, var(--start-bt-bg-color),  var(--midle-bt-bg-color), var(--end-bt-bg-color));
-    background-size: 400% 100%;
-}
-#aboutBT {
-    margin-left:  55%;
-    z-index: 3;
-    background: linear-gradient( 90deg, var(--start-bt-bg-color),  var(--midle-bt-bg-color), var(--end-bt-bg-color));
-    background-size: 400% 100%;
-}
-#contactBT {
-    margin-left: 70%;
-    z-index: 2;
-    background: linear-gradient(90deg, var(--start-bt-bg-color),  var(--midle-bt-bg-color), var(--end-bt-bg-color)) ;
-    background-size: 400% 100%;
-    
-}
-
-#projectsBT:hover, #skillsBT:hover, #homeBT:hover, #aboutBT:hover, #contactBT:hover, #nav:hover, #sendEmailBT:hover {
-    --glowColor: radial-gradient(closest-side, var(--main-light-color), rgba(105, 11, 11, 0));
-    z-index: 5;
-    animation: lightstreak 1.0s ;
-    animation-fill-mode: forwards;
-}
-
-@keyframes lightstreak {
-    0% { background-position: 0% 50%; color: black; borderColor:var(--start-bt-bg-color); font-size: 1.5vh;}
-    100% { background-position: 100% 50%; color: white; border-color: var(--end-bt-bg-color); font-size: 2vh;}
-}
-
-
-.navButtonGlow {
-    position: absolute;
-    width: 30vw;
-    height: 11vh;
-    border-radius: 30%;
-    background: var(--glowColor);
-    z-index: -1;
-}
-
-#projectsBTGlow {
-    margin-left: 5%;
-}
-#skillsBTGlow {
-    margin-left: 20%;
-}
-#homeBTGlow {
-    margin-left: 35%;
-}
-#aboutBTGlow {
-    margin-left: 50%;
-}
-#contactBTGlow {
-    margin-left: 65%;
 }

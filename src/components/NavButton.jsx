@@ -1,34 +1,36 @@
 import { useNavigate } from "react-router-dom"
 import { useState } from 'react'
 
-export default function NavButton ( { title, path, id}) {
+export default function NavButton ( { title, path, id, type } ) {
     const navigate = useNavigate();
-    
 
-    const [ showGlow, setShowGlow ] = useState(false)
 
     const handleClick = () =>{
-        navigate(path)
+        if(path){
+            navigate(path)
+        }
     }
 
-    const handleMouseEnter = () => {
-        setShowGlow(true)
+    function handleMouseEnter () {
+        const button = document.getElementById(id)
+        button.style.animationName = "lightstreak"
+        
     }
-    const handleMouseLeave = () => {
-        setShowGlow(false)
+    function handleMouseLeave () {
+        const button = document.getElementById(id)
+        button.style.animationName = "reverselightstreak"
+        button.style.animationDuration = "0.8s"
     }
 
     return (
-        <section>
-            {showGlow && <section id={id + "Glow"}className="navButtonGlow"></section>}
             <button id={id} 
-                onClick={handleClick} 
-                onMouseEnter={handleMouseEnter}
+                className="button"
+                onClick={handleClick}
+                type={type}
                 onMouseLeave={handleMouseLeave}
+                onMouseEnter={handleMouseEnter}
                 >
                 {title}
-                
             </button>
-        </section>
     )
 }

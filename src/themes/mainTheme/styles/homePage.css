@@ -1,27 +1,29 @@
-#homepage {
-    
-}
+
 
 #container {
     display: flex;
-    height: auto;
-    width: 15vw;
-    aspect-ratio: 1;
     justify-content: center;
-    background: radial-gradient(rgba(91, 18, 226, 0.342), rgb(0, 0, 0));
     border-radius: 100%;
+    width: 20vw;
+    height: auto;
+    aspect-ratio: 1;
+    min-width: 300px;
+
 }
 
 #mainProfilePicContainer{
     display: flex;
-    width: 13vw;
+    width: 15vw;
+    min-width: 200px;
     height: auto;
     aspect-ratio: 1;
     align-self: center;
     overflow: hidden;
-    border-radius: 100%;
-    border: 5px solid black;
     position:static;
+    
+    border-radius: 100%;
+    box-shadow: 0 0 50px red;
+
 
 }
 #mainProfilePicContainer:hover{
@@ -29,24 +31,36 @@
     animation-fill-mode: forwards;
 }
 @keyframes ringGlow{
-   from {border: 1vh solid var(--secondary-color);}
-   to {border: 1.5vh solid var(--trinary-color);}
+   /* from {border: 1vh solid var(--secondary-color);}
+   to {border: 1.5vh solid var(--trinary-color);} */
+   from {
+    box-shadow: 0 0 50px red;
+
+    
+   }
+   to {
+    box-shadow: 0 0 100px red;
+
+   }
 }
 
 #mainProfilePic{
     object-fit: cover;
     height: auto;
-    width: 13vw;
+    width: 15vw;
+    min-width: 200px;
     aspect-ratio: 1;
 }
 
 #welcomeMessageTextContainer{
    margin: 1vh; 
    text-align: center;
-   font-size: 1vw;
+   font-size: 16px;
 }
 
 #welcomeText {
-    font-size: 6vh;
+    font-size: 30px;
 }
+
+
 

@@ -1,21 +1,19 @@
 .skillSection {
+    transition: all 0.5s ease;
     display: flex;
     flex-direction: column;
     margin: 10px;
     width: 60%;
-    /* max-width: 80%; */
     height: 10%;
     max-height: 5%;
-    overflow:hidden;
-}
-.skillSection > h3 {
-    font-size: 30px;
+    overflow: hidden;
 }
 
 .skillContent {
+    transition: all 0.5s ease;
     display: flex;
     flex-direction: row;
-    padding: 15px;
+    padding: 10px;
     padding-left: 2vw;
     border-radius: 20px;
     background: 
@@ -29,14 +27,19 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 20px;
+
     animation: moveInFromLeft 1s ease;
-    min-width: 6vw;
+
+    min-width: 10vw;
+    max-height: 10vw;
+
 }
 .techLogo {
     width: 5vw;
-    height: auto;
-    margin: 5px;
+    height: 5vw;
+}
+.techLogoS {
+    width: 6vw;
     aspect-ratio: 1;
 }
 
@@ -46,14 +49,37 @@
 
 @keyframes moveInFromLeft {
     0% {
-        /* opacity: 0; */
-        margin-left: 100vh;
+        margin-left: 1000px;
+        
     }
-    /* 20% {
-        opacity: 0;
-    } */
-    
-    100% {
-        /* opacity: 1; */
+    100%{
+        margin-left: 0vw;
+        
+
+    }
+}
+
+
+@media screen and (max-width: 900px) {
+    .techLogoContainer > p{
+        font-size: 12px;
+        transition: all 0.5s ease;
+
+    }
+    .skillSection{
+        transition: all 0.5s ease;
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .techLogoContainer > p{
+        font-size: 10px;
+        transition: all 0.5s ease;
+
+    }
+    .skillSection{
+        transition: all 0.5s ease;
+        width: 80%;
     }
 }

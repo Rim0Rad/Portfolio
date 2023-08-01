@@ -4,14 +4,10 @@ import Body from './components/Body.jsx'
 
 
 export default function App () {
-
-
-  console.log("render app")
-
-
+  
 
   return (
-    <section id="page">
+    <section id="webPage" style={{height: window.innerHeight}}>
       <Header/>
       <Body/>
     </section>

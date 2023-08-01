@@ -15,7 +15,7 @@ import ReactNativelogo from '../assets/react-native-logo.png'
 export default function SkillPage () {
 
     return (
-        <section id="skillsPage">
+        <section className='page'>
             <section className="pageTitleContainer">
                 <p className="pageTitle">Skills</p>
             </section>
@@ -29,8 +29,8 @@ export default function SkillPage () {
                             <p>JavaScript</p>
                         </div>
                         <div className="techLogoContainer">
-                            <img className='techLogo' src={Javalogo}/>
-                            <p>Java</p>
+                            <img className='techLogoS' src={Javalogo}/>
+                            {/* <p>Java</p> */}
                         </div>
                         <div className="techLogoContainer">
                             <img className='techLogo' src={Pythonlogo}/>
@@ -58,12 +58,12 @@ export default function SkillPage () {
                             <p>React</p>
                         </div>
                         <div className="techLogoContainer">
-                            <img className='techLogo' src={ReactNativelogo}/>
-                            <p>React Native</p>
+                            <img className='techLogoS' src={ReactNativelogo}/>
+                            {/* <p>React-Native</p> */}
                         </div>
                         <div className="techLogoContainer">
-                            <img className='techLogo' src={Axioslogo}/>
-                            <p>Axios</p>
+                            <img className='techLogoS' src={Axioslogo}/>
+                            {/* <p>Axios</p> */}
                         </div>
                     </section>
                 </section>
@@ -71,16 +71,16 @@ export default function SkillPage () {
                     <h3 className='skillTitle'>Back-End</h3>
                     <section className="skillContent">
                         <div className="techLogoContainer">
-                            <img className='techLogo' src={SQLlogo}/>
-                            <p>SQL</p>
+                            <img className='techLogoS' src={SQLlogo}/>
+                            {/* <p>SQL</p> */}
                         </div>
                         <div className="techLogoContainer">
-                            <img className='techLogo' src={PSQLlogo}/>
-                            <p>PSQL</p>
+                            <img className='techLogoS' src={PSQLlogo}/>
+                            {/* <p>PSQL</p> */}
                         </div>
                         <div className="techLogoContainer">
-                            <img className='techLogo' src={Expresslogo}/>
-                            <p>Express</p>
+                            <img className='techLogoS' src={Expresslogo}/>
+                            {/* <p>Express</p> */}
                         </div>
                         <div className="techLogoContainer">
                             <img className='techLogo' src={JSONlogo}/>

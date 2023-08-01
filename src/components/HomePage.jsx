@@ -5,8 +5,7 @@ export default function HomePage (){
 
 
     return (
-        <section id="homepage">
-            {/* <Aurora/> */}
+        <section className='page'>
             <section className="pageTitleContainer">
                 <p id="welcomeText" className="pageTitle">Welcome</p>
             </section>

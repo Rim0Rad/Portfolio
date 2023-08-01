@@ -1,24 +1,38 @@
 import { FQ, Flock, BG } from '../assets/assetsImporter.js'
 import SlideShow from './SlideShow.jsx'
+import ImageBar from './ImageBar.jsx'
+import { useEffect } from 'react'
 
 export default function ProjectsPage () {
-    console.log("projecr page render")
 
-    if(window.scrollbars){
-        console.log("visible scroll bar")
-        const style = {
-            width: "100vh"
+    // Set up  background image movemnet with the mouse
+    useEffect( () => {
+        const cardContainers = document.getElementsByClassName("cardContainer")
+        
+        for(let i = 0; i < cardContainers.length; i++){
+            const imageBar = cardContainers[i].firstChild
+            const images = imageBar.childNodes
+            cardContainers[i].addEventListener("mousemove", ( e ) => {
+                const barLength = images.length * images[0].width
+                const ratio = (barLength - window.innerWidth) / window.innerWidth
+                const left = -e.pageX  * ratio + "px";
+                cardContainers[i].firstChild.style.left = left;
+            })
         }
-    }
+    }, [])
 
 
     return (
-        <section id="projectPage">
+        <section className='page'>
+
             <section className="pageTitleContainer">
                 <p className="pageTitle">My Projects</p>
             </section>
+
             <section className='pageContent'>
-                <section className='projectCardContainer'>
+
+                <section className='cardContainer'>
+                    <ImageBar images={FQ}/>
                     <section className="projectCard Hcontainer">                
                         <div className='projectDetails'>
                             <h2 className="projectCardTitle">Feather Quest</h2>
@@ -32,13 +46,12 @@ export default function ProjectsPage () {
                             </p>
                             <h4><a href="https://github.com/Rim0Rad/FeatherQuest" alt="link to GitHub">GitHub Link</a></h4>
                         </div>
-                        {/* <section className='slideShowContainerVertical'> */}
-                            <SlideShow images={FQ}/>
-                        {/* </section> */}
+                        {/* <SlideShow images={FQ}/> */}
                     </section>
                 </section>
-                <section className='projectCardContainer'>
 
+                <section className='cardContainer'>
+                    <ImageBar images={BG}/>
                     <section className="projectCard">
                         <div className='projectDetails'>
                             <h2 className="projectCardTitle">Boardgame Reviews</h2>
@@ -56,11 +69,12 @@ export default function ProjectsPage () {
                             <h4><a href="https://github.com/Rim0Rad/NC-GAMES" alt="link to GitHub">GitHub - Front-End</a></h4>
                             <h4><a href="https://github.com/Rim0Rad/Project_BE_Games" alt="link to GitHub">GitHub - Back-End</a></h4>
                         </div>
-                        <SlideShow images={BG}/>
+                        {/* <SlideShow images={BG}/> */}
                     </section>
                 </section>
-                <section className='projectCardContainer'>
 
+                <section className='cardContainer'>
+                    <ImageBar images={Flock}/>
                     <section className="projectCard">
                         <div className='projectDetails'>
                             <h2 className="projectCardTitle"> Flocking Algorithm</h2>
@@ -81,7 +95,7 @@ export default function ProjectsPage () {
                             </p>
                             <h4><a href="https://github.com/Rim0Rad/FlockSimulation" alt="link to GitHub">GitHub Link</a></h4>
                         </div>
-                        <SlideShow images={Flock}/>
+                        {/* <SlideShow images={Flock}/> */}
                     </section>
                 </section>
             </section>
