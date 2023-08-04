@@ -1,39 +1,55 @@
 import { FQ, Flock, BG } from '../assets/assetsImporter.js'
 import SlideShow from './SlideShow.jsx'
 import ImageBar from './ImageBar.jsx'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
+import Gallery from './Gallery.jsx'
 
 export default function ProjectsPage () {
 
+
     // Set up  background image movemnet with the mouse
+    // useEffect( () => {
+    //     const cardContainers = document.getElementsByClassName("cardContainer")
+        
+    //     for(let i = 0; i < cardContainers.length; i++){
+    //         const imageBar = cardContainers[i].firstChild
+    //         const images = imageBar.childNodes
+    //         cardContainers[i].addEventListener("mousemove", ( e ) => {
+    //             const barLength = images.length * images[0].width
+    //             const ratio = (barLength - window.innerWidth) / window.innerWidth
+    //             const left = -e.pageX  * ratio + "px";
+    //             cardContainers[i].firstChild.style.left = left;
+    //         })
+    //     }
+    // }, [])
+
+    const [ gallery, setGallery ] = useState(null)
+
     useEffect( () => {
         const cardContainers = document.getElementsByClassName("cardContainer")
         
         for(let i = 0; i < cardContainers.length; i++){
-            const imageBar = cardContainers[i].firstChild
-            const images = imageBar.childNodes
-            cardContainers[i].addEventListener("mousemove", ( e ) => {
+            const imageBarContainer = cardContainers[i].childNodes[1]
+            const images = imageBarContainer.firstChild.childNodes
+            imageBarContainer.addEventListener("mousemove", ( e ) => {
                 const barLength = images.length * images[0].width
-                const ratio = (barLength - window.innerWidth) / window.innerWidth
-                const left = -e.pageX  * ratio + "px";
-                cardContainers[i].firstChild.style.left = left;
+                const ratio = (barLength - (window.innerWidth - vw(20))) / (window.innerWidth - vw(21))
+                const left = (-e.pageX + vw(10)) * ratio + "px";
+                imageBarContainer.firstChild.style.left = left;
             })
         }
     }, [])
 
 
     return (
-        <section className='page'>
-
+        <section id="projectPage">
             <section className="pageTitleContainer">
                 <p className="pageTitle">My Projects</p>
             </section>
-
             <section className='pageContent'>
-
+                { gallery && <Gallery gallery={gallery} setGallery={setGallery}/>}
                 <section className='cardContainer'>
-                    <ImageBar images={FQ}/>
-                    <section className="projectCard Hcontainer">                
+                    <section className="projectCard">                
                         <div className='projectDetails'>
                             <h2 className="projectCardTitle">Feather Quest</h2>
                             <h3>Mobile</h3>
@@ -46,12 +62,11 @@ export default function ProjectsPage () {
                             </p>
                             <h4><a href="https://github.com/Rim0Rad/FeatherQuest" alt="link to GitHub">GitHub Link</a></h4>
                         </div>
-                        {/* <SlideShow images={FQ}/> */}
                     </section>
+                    <ImageBar images={{FQ}} setGallery={setGallery}/>
                 </section>
 
                 <section className='cardContainer'>
-                    <ImageBar images={BG}/>
                     <section className="projectCard">
                         <div className='projectDetails'>
                             <h2 className="projectCardTitle">Boardgame Reviews</h2>
@@ -69,12 +84,11 @@ export default function ProjectsPage () {
                             <h4><a href="https://github.com/Rim0Rad/NC-GAMES" alt="link to GitHub">GitHub - Front-End</a></h4>
                             <h4><a href="https://github.com/Rim0Rad/Project_BE_Games" alt="link to GitHub">GitHub - Back-End</a></h4>
                         </div>
-                        {/* <SlideShow images={BG}/> */}
                     </section>
+                    <ImageBar images={{BG}} setGallery={setGallery}/>
                 </section>
 
                 <section className='cardContainer'>
-                    <ImageBar images={Flock}/>
                     <section className="projectCard">
                         <div className='projectDetails'>
                             <h2 className="projectCardTitle"> Flocking Algorithm</h2>
@@ -95,10 +109,20 @@ export default function ProjectsPage () {
                             </p>
                             <h4><a href="https://github.com/Rim0Rad/FlockSimulation" alt="link to GitHub">GitHub Link</a></h4>
                         </div>
-                        {/* <SlideShow images={Flock}/> */}
                     </section>
+                    <ImageBar images={{Flock}} setGallery={setGallery}/>
                 </section>
             </section>
         </section>
     )
 }
+
+function vh( percent ) {
+    var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    return (percent * h) / 100;
+}
+
+function vw(percent) {
+    var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    return (percent * w) / 100;
+  }

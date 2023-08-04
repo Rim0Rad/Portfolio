@@ -1,6 +1,6 @@
 :root{
-    --bubble-size: calc(8vw + 100px);
-    --logo-size: calc(8vw + 40px);
+    --bubble-size: calc(10vw + 6vh);
+    --logo-size: calc(6vw + 5vh);
     --grow-size: 4vw;
 }
 
@@ -8,46 +8,54 @@
     display: flex;
     position: absolute;
     z-index: 10;
-
     height: var(--bubble-size);
     width: auto;
     aspect-ratio: 1;
     align-items: center;
     justify-content: center;
+    border-radius: 100%;
 }
 
 .contactBubble {
     transition: all 0.4s ease;
-
-    height: calc(var(--bubble-size));
+    height: var(--bubble-size);
     width: auto;
     aspect-ratio: 1;
-
     display: flex;
     align-items: center;
     justify-content: center;
-    
-    background: radial-gradient(var(--start-bt-bg-color),  rgb(0, 0, 0));
+    background: radial-gradient(var(--main-color),  black);
     border-radius: 100%;
 }
-
-
 .logo {
     transition: all 0.4s ease;
     height: var(--logo-size);
     width: auto;
     aspect-ratio: 1;
 }
-
 .contactBubble:hover {
     transition: all 0.4s ease;
     height: calc(var(--bubble-size) + var(--grow-size));
     .logo {
         transition: all 0.4s ease;
-        /* height: 16vh; */
         height: var(--bubble-size);
-    }
-   
+    }  
+}
+
+@media screen and (max-width: 500px){
+   .bubbleContainer {
+    height: 75px;
+   }
+    .contactBubble {
+    height: 75px;
+   }
+   .logo {
+    height: 60px
+   }
+   textarea {
+    max-width: none;
+    width: 300px;
+   }
 }
 
 #linkedInCheckBox, #githubCheckBox, #emailCheckBox {
@@ -59,7 +67,7 @@
 #linkedInCheckBox:checked + label > #linkedInBubble,
 #emailCheckBox:checked + label > #emailBubble {
     transition: all 2s ease;
-    background: radial-gradient(rgb(182, 122, 228), rgb(122, 35, 194), rgba(0, 0, 0, 0.671), rgba(0, 0, 0, 0));
+    background: radial-gradient(var(--main-color), var(--secondary-color), var(--trinary-color),black, black);
     border-radius: 100%;
     top: 50%;
     left: 50%;
@@ -75,8 +83,9 @@
     transform: translate(-20%, -50%);
 }
 .linkedInBubbleAnimation {
-    animation: moveLinkedInBubble 1s ease;
-    
+    /* animation: moveLinkedInBubble 1s ease-in-out; */
+    animation: drop 1s ease-in-out reverse forwards;
+
 }
 #githubBubble{
     top: 50%;
@@ -84,16 +93,21 @@
     transform: translate(-50%, -50%);
 }
 .githubBubbleAnimation {
-    animation: moveGithubBubble 1s ease-in-out;
+    /* animation: moveGithubBubble 1s ease-in-out; */
+    animation: hang 0.4s, drop 1s ease-in-out reverse forwards 0.4s;
+
 }
 #emailBubble {
     top: 50%;
     left: 80%;
     transform: translate(-80%, -50%);
+    transition: all 0.1s;
 }
 .emailBubbleAnimation  {
-   
-    animation: moveEmailBubble 1s ease-in-out;
+    /* animation: moveEmailBubble 1s ease-in-out; */
+    animation: hang 0.2s, drop 1s ease-in-out reverse 0.2s;
+
+
 }
 
 @keyframes moveLinkedInBubble {
@@ -103,12 +117,59 @@
 }
 @keyframes moveGithubBubble {
     0% {left: 20%;}
-    
 }
 @keyframes moveEmailBubble {
     0% {left: 20%;}
-    
 }
+
+@keyframes hang {
+    0% {
+        top: -20%;
+    }
+    100%{
+        top: -20%;
+    }
+}
+@keyframes drop {
+    /* 0%{
+        top: -20%
+    }
+    40%{
+        top: 50%;
+    }
+    55% {
+        top: 45% 
+    }
+    75% {
+        top: 50%
+    }
+    85%{
+        top: 48%
+    }
+    100% {
+        top: 50%;
+    } */
+
+    0%{
+        top: 50%
+    }
+    15%{
+        top: 48%;
+    }
+    25% {
+        top: 50% 
+    }
+    45% {
+        top: 45%
+    }
+    60%{
+        top: 50%
+    }
+    100% {
+        top: -20%;
+    }
+}
+
 @keyframes moveToMidleAndGrow {
     50% {
         top: 50%;
@@ -120,7 +181,7 @@
 }
 
 
-/* Email form styling */
+/* Email form */
 #emailForm, #emailSentMessage {
     position: absolute;
     top: 50%;
@@ -131,7 +192,7 @@
     width: 60%;
     height: 60%;
     min-height: 500px;
-    background: linear-gradient( var(--start-bt-bg-color), rgb(0, 0, 0));
+    background: linear-gradient( var(--main-color), rgb(0, 0, 0));
     border-radius: 20px;
     padding: 20px;
     display: flex;
@@ -150,25 +211,23 @@ input, textarea {
     max-width: 50%;
     animation: growContainer 2s ease;
     padding: 2px;
+}
+input {
     text-align: center;
-
-    
 }
 textarea {
     padding: 5px;
-    min-width: 100px;
+    min-width: 200px;
     min-height: 200px;
+}
+textarea:placeholder-shown {
+    text-align: center;
 }
 label {
     font-size: 15px;
-    animation: growText 2s ease;
+    animation: growText 1.5s ease;
 
 }
-#sendEmailBT{
-    position: relative;
-
-}
-
 #emailSentConfirmationText{
     font-size: 40px;
 }
@@ -177,24 +236,12 @@ label {
         min-width: 0;
         min-height: 0;
         height: 0;
-        background-color: rgb(28, 11, 121);
-        /* min-height: 0; */
-        /* position: absolute;
-        height: calc(var(--bubble-size) - 4vh);
-        width: calc(var(--bubble-size) - 4vh);;
-        aspect-ratio: 1; */
-        /* border-radius: 100%; */
-        /* padding: 20px; */
-    }
-    100%{
-
+        background-color: var(--secondary-color);
     }
 }
 @keyframes growText {
     0% {
         font-size: 0;
     }
-    100%{
-        
-    }
 }
+

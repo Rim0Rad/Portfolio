@@ -22,7 +22,7 @@
     position:static;
     
     border-radius: 100%;
-    box-shadow: 0 0 50px red;
+    box-shadow: 0 0 50px var(--main-color);
 
 
 }
@@ -31,16 +31,11 @@
     animation-fill-mode: forwards;
 }
 @keyframes ringGlow{
-   /* from {border: 1vh solid var(--secondary-color);}
-   to {border: 1.5vh solid var(--trinary-color);} */
    from {
-    box-shadow: 0 0 50px red;
-
-    
+    box-shadow: 0 0 50px var(--main-color);
    }
    to {
-    box-shadow: 0 0 100px red;
-
+    box-shadow: 0 0 100px var(--main-color);
    }
 }
 

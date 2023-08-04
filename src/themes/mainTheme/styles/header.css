@@ -3,7 +3,7 @@
 #nav {
     transition: all 0.5s ease;
     display: flex;
-    background-color: rgb(0, 0, 0);
+    background-color: black;
     z-index: 1;
     height: 7vh;
     min-height: 80px;
@@ -21,11 +21,11 @@
     border-radius: 4px;
     font-size: var(--fontSizeNormal);
     font-weight: bold;
-    background: linear-gradient(90deg, var(--start-bt-bg-color), var(--midle-bt-bg-color), var(--end-bt-bg-color));
+    background: linear-gradient(90deg, var(--main-color), white, black);
     background-size: 400% 400%;
     text-shadow: 0 1px 2px black;
     user-select: none;
-    box-shadow: 0 0 15px var(--start-bt-bg-color);
+    box-shadow: 0 0 15px var(--main-color);
 }
 
 
@@ -50,18 +50,18 @@
 }
 
 @keyframes lightstreak {
-    0% { background-position: 0% 50%; color: black; borderColor:var(--start-bt-bg-color); }
-    100% { background-position: 100% 50%; color: white; border-color: var(--end-bt-bg-color); font-size: var(--fontSizeLarge);}
+    0% { background-position: 0% 50%;  borderColor:var(--main-color); }
+    100% { background-position: 100% 50%; color: white; border-color: black; font-size: var(--fontSizeLarge);}
 }
 @keyframes reverselightstreak {
-    0% { background-position: 100% 50%; color: white; border-color: var(--end-bt-bg-color); font-size: var(--fontSizeLarge);}
-    100% { background-position: 0% 50%; color: black; borderColor:var(--start-bt-bg-color); }
+    0% { background-position: 100% 50%; color: white; border-color: black; font-size: var(--fontSizeLarge);}
+    100% { background-position: 0% 50%;  borderColor:var(--main-color); }
 }
 
 
 
 #themebt {
-    background-color: rgb(53, 12, 43);
+    background-color: var(--main-color);
     color: white;
     border-radius: 200px;
     width: 200px;

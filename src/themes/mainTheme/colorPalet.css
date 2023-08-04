@@ -1,15 +1,6 @@
 :root {
-   
-    --start-bt-bg-color: rgb(136, 11, 32);
-    --midle-bt-bg-color:rgb(255, 255, 255);
-    --end-bt-bg-color: rgba(11, 12, 1, 0.8);
 
-    --start-trsp-color: rgba(89, 3, 202, 0);
-    --end-trsp-color: rgba(16, 14, 124, 0.336);
-
-    --main-light-color: hsla(240, 100%, 79%, 0.363);
-
-    --main-color: black;
-    --secondary-color: rgba(72, 1, 78, 0.342);
-    --trinary-color: rgb(12, 8, 71);
+    --main-color: rgb(136, 11, 32);
+    --secondary-color: rgba(16, 78, 1, 0.349);
+    --trinary-color: rgba(4, 10, 87, 0.356);
 }

@@ -2,7 +2,7 @@ import linkedLogo from '../assets/linkedin-icon.svg'
 import githubLogo from '../assets/github-icon.svg'
 import mailIcon from '../assets/mail-icon.svg'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import { Link } from 'react-router-dom'
 import EmailForm from './EmailForm'
@@ -15,6 +15,7 @@ let githubCheckBox;
 export default function ContacsPage () {
 
     const [ isEmailForm, setIsEmailForm ] = useState(false)
+    const [ angle, setAngle ] = useState(0)
         
     function hanldePageLoad () {
         emailCheckbox = document.getElementById("emailCheckBox")
@@ -22,6 +23,7 @@ export default function ContacsPage () {
         githubCheckBox = document.getElementById("githubCheckBox")
     }
 
+    // listen for click outside email box to close it
     function pageClikcListener ( e ) {
         const emailForm = document.getElementById("emailForm")
         if(emailForm){
@@ -62,7 +64,28 @@ export default function ContacsPage () {
         }, 1500)
     }
 
-   
+    // useEffect( () => {
+    //     const emailBubble = document.getElementById("emailBubble")
+    //     // let x = Number(emailBubble.style.left.replace("%", ""));
+    //     // let y = Number(emailBubble.style.top.replace("%", ""))     
+    //     const r = 20;
+    //     // const v = 0.01;
+    //     // console.log(x, y)
+    //     // const angle = Math.atan2(y,x) * 180 / Math.PI
+        
+    //     console.log("ANGLE", angle)
+
+    //     const left = r * Math.cos( (angle)) + 50
+    //     const top = r * Math.sin( (angle)) + 50
+
+    //     console.log(left, top)
+    //     emailBubble.style.left = left + "%";
+    //     emailBubble.style.top = top + "%";
+    //     setTimeout( () => {
+    //         setAngle( angle + 1)
+
+    //     }, 100)
+    // }, [angle]) 
     
     
     return (
