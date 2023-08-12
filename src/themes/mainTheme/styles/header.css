@@ -6,7 +6,7 @@
     background-color: black;
     z-index: 1;
     height: 7vh;
-    min-height: 80px;
+    /* min-height: 80px; */
     align-items: center;
     justify-content: center;
 }

@@ -47,46 +47,21 @@ export default function ContacsPage () {
             if(e.target.id === "linkedInCheckBox"){
                 document.querySelector('#linkedInBubble').classList.remove('linkedInBubbleAnimation')
                 linkedInCheckBox.checked = false
-                // window.open("https://www.linkedin.com/in/rimas-radziunas/")
+                window.open("https://www.linkedin.com/in/rimas-radziunas/")
             }else if (e.target.id === "githubCheckBox"){
                 document.querySelector('#githubBubble').classList.remove('githubBubbleAnimation')
                 githubCheckBox.checked = false
-                // window.open("https://github.com/Rim0Rad")
+                window.open("https://github.com/Rim0Rad")
             }
             else if (e.target.id === "emailCheckBox"){
                 document.querySelector('#emailBubble').classList.remove('emailBubbleAnimation')
                 emailCheckbox.checked = false
-                
                 setIsEmailForm(true)
                 window.addEventListener("click", pageClikcListener)
             }
             e.target.disabled = false;
         }, 1500)
-    }
-
-    // useEffect( () => {
-    //     const emailBubble = document.getElementById("emailBubble")
-    //     // let x = Number(emailBubble.style.left.replace("%", ""));
-    //     // let y = Number(emailBubble.style.top.replace("%", ""))     
-    //     const r = 20;
-    //     // const v = 0.01;
-    //     // console.log(x, y)
-    //     // const angle = Math.atan2(y,x) * 180 / Math.PI
-        
-    //     console.log("ANGLE", angle)
-
-    //     const left = r * Math.cos( (angle)) + 50
-    //     const top = r * Math.sin( (angle)) + 50
-
-    //     console.log(left, top)
-    //     emailBubble.style.left = left + "%";
-    //     emailBubble.style.top = top + "%";
-    //     setTimeout( () => {
-    //         setAngle( angle + 1)
-
-    //     }, 100)
-    // }, [angle]) 
-    
+    }    
     
     return (
         <section className='page' onLoad={hanldePageLoad} onReset={hanldePageLoad} >

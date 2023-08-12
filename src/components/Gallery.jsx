@@ -31,12 +31,10 @@ export default function Gallery ( {gallery, setGallery} ) {
     }
 
     function handleMouseEnter () {
-        console.log("enter")
         const galleryContainer = document.getElementById("galleryContainer")
-        galleryContainer.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+        galleryContainer.style.backgroundColor = "rgba(0, 0, 0, 0.7)";
     }
     function handleMouseLeave () {
-        console.log("leave")
         const galleryContainer = document.getElementById("galleryContainer")
         galleryContainer.style.backgroundColor = "rgba(0, 0, 0, 0.25)";
     }
@@ -45,8 +43,9 @@ export default function Gallery ( {gallery, setGallery} ) {
         <section id="galleryContainer" onClick={handleClick} onMouseLeave={handleMouseEnter} onMouseEnter={handleMouseLeave}>
             <section id="gallery" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
                 <button id="prevImage" className='buttonG' onClick={prevImageClick}>{"<"}</button>
-                {/* <section id="imageCoverContainer"></section> */}
-                <img src={images[currentImgId]}/>
+                <section className='galleryImgContainer'>
+                    <img id="galleryImg" src={images[currentImgId]}/>
+                </section>
                 <button id="nextImage" className='buttonG' onClick={nextImageClick}>{">"}</button>
             </section>
         </section>

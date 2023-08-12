@@ -5,13 +5,15 @@
     position: relative;
     justify-content: center;
     align-items: center;
-    margin: 1% 0;
+    margin: 30px 0;
     max-width: 100%;
     overflow: hidden;
     background: 
         linear-gradient( 90deg, black,var(--secondary-color) 10% 90%, black),
         linear-gradient(black, var(--secondary-color) 7% 93%, black);
 }
+
+
 
 .Hcontainer {
     display: flex;
@@ -35,7 +37,7 @@
 }
 
 .projectCardTitle {
-    font-size: 2vh;
+    font-size: 4vh;
     margin: 1vh;
 }
 .projectDetails > h2, h3, h4, p {
@@ -53,66 +55,24 @@
     max-width: 80%;
     overflow: hidden;
     border-radius: 5px;
+    margin: 10px;
 }
 #imageBar {
     display: flex;
     position: relative;
     height: 33vh;
     width: auto;
+    align-items: center;
 }
 
-#imageBar > img {
-    display: flex;
-        
+.imageBarImg {
+    transition: all 1s ease;
+    height: 30vh;
+    
 }
-
-/* Gallery */
-
-
-/* SLIDESHOW */
-
-.projectCardImgContainer {
-    display: flex;
-    flex: 1;
-    justify-content: center;
-    height: 33vh;
-    min-height: 400px;
+.imageBarImg:hover {
+    height: 35vh;
+    border-radius: 5px;
+    box-shadow: 0 0 10px var(--main-color);
+    z-index: 10;
 }
-#projectImage, #backgroundImg{
-    border-radius: 10px;
-    height: 33vh;
-    min-height: 400px;
-
-    width: auto;
-    position: absolute;
-    object-fit: contain;
-}
-#backgroundImg {
-    box-shadow: 0px 0px 1vw var(--trinary-color);
-}
-.fade{
-    animation-name: fadeAnimation;
-    animation-duration: 3s;
-    animation-timing-function: ease-in;
-    animation-delay: 0s;
-    animation-fill-mode: forwards;
-    z-index: 3;
-}
-@keyframes fadeAnimation {
-    0% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 1;
-    }
-    95% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 0;
-        z-index: 0;
-    }
-}
-
-
-
