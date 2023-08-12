@@ -16,18 +16,16 @@
     z-index: 100;
     display: flex;
     justify-content: center;
-
-    /* max-width: 90vw;
-    max-height: 90vh; */
-    /* border: 2px solid white; */
+    min-width: 90vw;
+    max-width: 90vw;
 }
 .galleryImgContainer {
     max-height: 90vh;
     height: 90vh;
-    width: 100vh;
-    max-width: 50vw;
+    width: 90vw;
+    padding: 5px;
     background-color: black;
-    /* border: 2px solid white; */
+    border: 1px solid rgba(255, 255, 255, 0.219);
     
 }
 
@@ -44,13 +42,10 @@
     display: flex;
     font-size: 30px;
     font-weight: bold;
-    min-width: 100px;
-    /* flex: 1; */
+    min-width: 70px;
     justify-content: center;
     align-items: center;
     border: none;
-    
-    
 }
 
 #nextImage {

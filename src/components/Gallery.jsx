@@ -23,7 +23,8 @@ export default function Gallery ( {gallery, setGallery} ) {
         setCurrentImgId(id)
     }
     function nextImageClick () {
-        let id = currentImgId + 1
+        let id = Number(currentImgId) + 1
+        console.log(id)
         if( id > images.length - 1 ){
             id = 0
         }

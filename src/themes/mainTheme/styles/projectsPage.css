@@ -53,9 +53,11 @@
 #imageBarContainer {
     display: flex;
     max-width: 80%;
+    width: 80%;
     overflow: hidden;
     border-radius: 5px;
     margin: 10px;
+    border: 1px solid white;
 }
 #imageBar {
     display: flex;
@@ -68,8 +70,8 @@
 .imageBarImg {
     transition: all 1s ease;
     height: 30vh;
-    
 }
+
 .imageBarImg:hover {
     height: 35vh;
     border-radius: 5px;

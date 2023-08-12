@@ -36,8 +36,8 @@ export default function ProjectsPage () {
                 { gallery && <Gallery gallery={gallery} setGallery={setGallery}/>}
 
                 <FeatherQuest FQ={FQ} setGallery={setGallery}/>
-                <BoardGameReviews BG={BG} setGallery={setGallery}/>
                 <FlockingAlgorithm Flock={Flock} setGallery={setGallery}/>
+                <BoardGameReviews BG={BG} setGallery={setGallery}/>
                 
             </section>
         </section>

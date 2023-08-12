@@ -15,6 +15,9 @@ export default function ImageBar ( { images, setGallery } ) {
 
     function handleLoad (e) {
         e.target.style.height = "30vh"
+        
+        const image = document.getElementById("0")
+        console.log(image.style)
     }
     function hanldeMouseEnter ( e ) {
         e.target.style.height = "32vh"
@@ -25,16 +28,18 @@ export default function ImageBar ( { images, setGallery } ) {
 
     function loadImages () {
         return images[Object.keys(images)[0]].map( (image, index) => {
+            
             const style = { height: "0vh"}
             const imageElement =  <img id={index}
-                style={style}
-                className={"imageBarImg " +  Object.keys(images)[0]}
-                key={index} 
-                src={image}
-                onLoad={handleLoad}
-                onMouseEnter={hanldeMouseEnter}
-                onMouseLeave={handleMouseLeave}
+            style={style}
+            className={"imageBarImg " +  Object.keys(images)[0]}
+            key={index} 
+            src={image}
+            onLoad={handleLoad}
+            onMouseEnter={hanldeMouseEnter}
+            onMouseLeave={handleMouseLeave}
             />
+            
             return imageElement
         })
 
