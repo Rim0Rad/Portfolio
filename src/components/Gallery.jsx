@@ -3,7 +3,6 @@ import { rectContains } from '../utils/geometry.js'
 
 export default function Gallery ( {gallery, setGallery} ) {
 
-
     const [ images, setImages ] = useState(gallery.images)
     const [ currentImgId , setCurrentImgId ] = useState(gallery.currentImage)
 
@@ -24,7 +23,6 @@ export default function Gallery ( {gallery, setGallery} ) {
     }
     function nextImageClick () {
         let id = Number(currentImgId) + 1
-        console.log(id)
         if( id > images.length - 1 ){
             id = 0
         }

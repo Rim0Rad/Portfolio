@@ -1,6 +1,6 @@
-import ImageBar from "./ImageBar"
+import MediaBar from "./MediaBar"
 
-export default function FlockingAlgorithm ( { Flock, setGallery }) {
+export default function FlockingAlgorithm ( { images, setGallery }) {
 
     return (
         <section className='cardContainer'>
@@ -25,7 +25,7 @@ export default function FlockingAlgorithm ( { Flock, setGallery }) {
                             <h4><a href="https://github.com/Rim0Rad/FlockSimulation" alt="link to GitHub">GitHub Link</a></h4>
                         </div>
                     </section>
-                    <ImageBar images={{Flock}} setGallery={setGallery}/>
+                    <MediaBar images={images} setGallery={setGallery}/>
                 </section>
     )
 }

@@ -1,7 +1,9 @@
-import ImageBar from './ImageBar.jsx'
+import MediaBar from './MediaBar.jsx'
 
-export default function FeatherQuest ({FQ, setGallery} ) {
+export default function FeatherQuest ({images, setGallery} ) {
 
+
+    
     return (
         <section className='cardContainer'>
             <section className="projectCard">                
@@ -18,7 +20,10 @@ export default function FeatherQuest ({FQ, setGallery} ) {
                     <h4><a href="https://github.com/Rim0Rad/FeatherQuest" alt="link to GitHub">GitHub Link</a></h4>
                 </div>
             </section>
-            <ImageBar images={{FQ}} setGallery={setGallery}/>
+
+            <MediaBar images={images} videoURL="https://www.youtube.com/embed/H4YvSgpfFY8" setGallery={setGallery}/>
+            
+
         </section>
     )
 }

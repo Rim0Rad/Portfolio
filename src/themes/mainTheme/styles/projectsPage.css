@@ -11,6 +11,7 @@
     background: 
         linear-gradient( 90deg, black,var(--secondary-color) 10% 90%, black),
         linear-gradient(black, var(--secondary-color) 7% 93%, black);
+    
 }
 
 
@@ -49,17 +50,57 @@
     font-family: Gotu;
 }
 
-/* IMAGE BAR */
-#imageBarContainer {
-    display: flex;
+/* MEDIA */
+.mediaBar {
     max-width: 80%;
     width: 80%;
+    margin: 10px 0;
+    /* border: 2px solid rgba(255, 255, 255, 0.199); */
+}   
+
+.videoBarContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     overflow: hidden;
+    margin: 5px 0px;
+    padding: 1vw;
+    border: 2px solid rgba(255, 255, 255, 0.199);
+    border-top: none;
     border-radius: 5px;
-    margin: 10px;
-    border: 1px solid white;
+    background-color: rgba(255, 255, 255, 0.199);
 }
-#imageBar {
+
+.videoBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 33vh;
+    min-height: 335px;
+    width: auto;
+    align-items: center;
+}
+#videoFrame {
+    width: 560px;
+    height: 315px;
+}
+
+/* IMAGE BAR */
+.imageBarContainer {
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+
+    overflow: hidden;
+    margin: 5px 0px;
+    padding: 1vw;
+    border: 2px solid rgba(255, 255, 255, 0.199);
+    border-top: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.199);
+}
+.imageBar {
     display: flex;
     position: relative;
     height: 33vh;
@@ -76,5 +117,5 @@
     height: 35vh;
     border-radius: 5px;
     box-shadow: 0 0 10px var(--main-color);
-    z-index: 10;
+    z-index: 4;
 }

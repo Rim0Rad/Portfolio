@@ -1,6 +1,6 @@
-import ImageBar from "./ImageBar"
+import MediaBar from "./MediaBar"
 
-export default function BoardGameReviews ( {BG, setGallery}) {
+export default function BoardGameReviews ( {images, setGallery}) {
 
     return (
         <section className='cardContainer'>
@@ -22,7 +22,7 @@ export default function BoardGameReviews ( {BG, setGallery}) {
                     <h4><a href="https://github.com/Rim0Rad/Project_BE_Games" alt="link to GitHub">GitHub - Back-End</a></h4>
                 </div>
             </section>
-            <ImageBar images={{BG}} setGallery={setGallery}/>
+            <MediaBar images={images} setGallery={setGallery}/>
         </section>
     )
 }

@@ -16,7 +16,7 @@ import FQ15 from './FQ-assets/FQ15.png'
 import FQ16 from './FQ-assets/FQ16.png'
 import FQ17 from './FQ-assets/FQ17.png'
 
-export const FQ = [ FQ1, FQ2, FQ3, FQ4, FQ5, FQ6, FQ7, FQ8, FQ9, FQ10, FQ11, FQ12, FQ13, FQ14, FQ15, FQ16, FQ17 ]
+export const FQ = { name: "FQ", images:[FQ1, FQ2, FQ3, FQ4, FQ5, FQ6, FQ7, FQ8, FQ9, FQ10, FQ11, FQ12, FQ13, FQ14, FQ15, FQ16, FQ17] }
 
 
 
@@ -29,7 +29,7 @@ import Flock6 from './Flocking-assets/Flock6.png'
 import Flock7 from './Flocking-assets/Flock7.png'
 
 
-export const Flock = [ Flock1, Flock2, Flock3, Flock4, Flock5, Flock6, Flock7];
+export const Flock = { name: "Flock", images:[Flock1, Flock2, Flock3, Flock4, Flock5, Flock6, Flock7]};
 
 
 import BG1 from './BGames-assets/BG1.png'
@@ -43,4 +43,4 @@ import BG8 from './BGames-assets/BG8.png'
 import BG9 from './BGames-assets/BG9.png'
 import BG10 from './BGames-assets/BG10.png'
 
-export const BG = [ BG1, BG2, BG3, BG4, BG5, BG6, BG7, BG8, BG9, BG10];
+export const BG = {name: "BG", images:[ BG1, BG2, BG3, BG4, BG5, BG6, BG7, BG8, BG9, BG10]};
